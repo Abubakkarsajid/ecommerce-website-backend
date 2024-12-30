@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGO_ClINT_URL)
 
 //   create a schema
 const userSchema = new mongoose.Schema({
-    orderid:Number,
+    UserId:String,
     name: String,
     phone:String ,
     email: String,
@@ -38,7 +38,7 @@ const userSchema = new mongoose.Schema({
   // create a new order
   app.post("/create-order", async (req, res) => {
     const create_Order = new order({
-        orderid: req.body.id,
+        UserId: req.body.id,
         name: req.body.name,
         phone: req.body.phone,
         email: req.body.email,
